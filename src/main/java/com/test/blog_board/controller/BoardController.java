@@ -19,14 +19,14 @@ public class BoardController {
     public String main(Model model){
         model.addAttribute("boards", boardService.boardList());
 
-        return "/board/boards";
+        return "board/boards";
     }
 
     @GetMapping("/{boardId}")
     public String board(@PathVariable long boardId, Model model){
         model.addAttribute("board", boardService.findById(boardId));
 
-        return "/board/board";
+        return "board/board";
     }
 
     @GetMapping("/add")
@@ -44,7 +44,7 @@ public class BoardController {
         redirectAttributes.addAttribute("boardId", boardId);
         redirectAttributes.addAttribute("status", true);
 
-        return "redirect:/boards/{boardId}";
+        return "redirect:boards/{boardId}";
     }
 
     @GetMapping("/{boardId}/edit")
@@ -67,13 +67,13 @@ public class BoardController {
 
         boardService.update(findBoard);
 
-        return "redirect:/boards/{boardId}";
+        return "redirect:boards/{boardId}";
     }
 
     @GetMapping("/{boardId}/delete")
     public String deleteBoard(@PathVariable Long boardId){
         boardService.deleteById(boardId);
-        return "redirect:/boards";
+        return "redirect:boards";
     }
 
 
