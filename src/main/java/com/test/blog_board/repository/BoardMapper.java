@@ -1,4 +1,4 @@
-package com.test.blog_board.mapper;
+package com.test.blog_board.repository;
 
 import com.test.blog_board.model.Board;
 import org.springframework.stereotype.Repository;

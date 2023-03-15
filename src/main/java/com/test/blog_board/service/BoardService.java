@@ -1,6 +1,6 @@
 package com.test.blog_board.service;
 
-import com.test.blog_board.mapper.BoardMapper;
+import com.test.blog_board.repository.BoardMapper;
 import com.test.blog_board.model.Board;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;

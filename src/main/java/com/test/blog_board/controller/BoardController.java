@@ -44,7 +44,7 @@ public class BoardController {
         redirectAttributes.addAttribute("boardId", boardId);
         redirectAttributes.addAttribute("status", true);
 
-        return "redirect:boards/{boardId}";
+        return "redirect:/boards/{boardId}";
     }
 
     @GetMapping("/{boardId}/edit")
@@ -67,15 +67,12 @@ public class BoardController {
 
         boardService.update(findBoard);
 
-        return "redirect:boards/{boardId}";
+        return "redirect:/boards/{boardId}";
     }
 
     @GetMapping("/{boardId}/delete")
     public String deleteBoard(@PathVariable Long boardId){
         boardService.deleteById(boardId);
-        return "redirect:boards";
+        return "redirect:/boards";
     }
-
-
-
 }
