@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 //롬복추가
 // 연수!
-//22
+//22//33
 @Controller
 @RequestMapping("/boards")
 @RequiredArgsConstructor
