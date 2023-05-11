@@ -7,7 +7,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
-
+//롬복추가
+// 연수!
 @Controller
 @RequestMapping("/boards")
 @RequiredArgsConstructor
@@ -44,7 +45,7 @@ public class BoardController {
         redirectAttributes.addAttribute("boardId", boardId);
         redirectAttributes.addAttribute("status", true);
 
-        return "redirect:/boards/{boardId}";
+        return "redirect:boards/{boardId}";
     }
 
     @GetMapping("/{boardId}/edit")
@@ -67,12 +68,15 @@ public class BoardController {
 
         boardService.update(findBoard);
 
-        return "redirect:/boards/{boardId}";
+        return "redirect:boards/{boardId}";
     }
 
     @GetMapping("/{boardId}/delete")
     public String deleteBoard(@PathVariable Long boardId){
         boardService.deleteById(boardId);
-        return "redirect:/boards";
+        return "redirect:boards";
     }
+
+
+
 }
